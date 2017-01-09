@@ -1,0 +1,42 @@
+h1 {
+	font-size: 2vw;	
+}
+
+h3 {
+	font-size: 2vw;	
+}
+
+img {
+	height: auto;
+	width : 30vw;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+td {
+	width: 5vw;
+}
+
+.draw {
+	position: relative;
+	border: 1px solid black;
+}
+
+.name {
+	text-align: center;
+	font-size: 1vw;
+}
+
+.number {
+	text-align: left;
+	margin-right: 1vw;
+	font-size: 1vw;
+}
+
+.mass {
+	float: right;			
+	clear: right;
+	font-size: 1vw;
+}
