@@ -8,7 +8,7 @@
 			return false;
 	}
 	if ($argc != 4 || !ft_check_sign(trim($argv[2])) || !is_numeric(trim($argv[1])) || !is_numeric(trim($argv[3])))
-		print("Inconrrect Parameters\n");
+		print("Incorrect Parameters\n");
 	else
 	{
 		$argv[1] = trim($argv[1]);
