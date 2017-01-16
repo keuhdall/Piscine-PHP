@@ -1,31 +1,31 @@
 <?php
+	$tab = array();
 	$err = false;
-
-	$tab[0] = $_POST['login'];
-	$tab[1] = $_POST['passwd'];
-	if ($tab[0] && $tab[1] && $_POST['submit'] == "OK")
+	if ($_POST['login'] && $_POST['passwd'] && $_POST['submit'] == "OK")
 	{
 
+		$pwd = hash("whirlpool", $_POST['passwd']);
 		if (!file_exists("../private"))
 			mkdir("../private", 0700);
 		if (file_exists("../private/passwd"))
-			$tab2 = unserialize(file_get_contents("../private/passwd"));
-		$tab = hash("whirlpool", $tab[1]);
-
-		foreach ($tab as $elem) {
-			if ($elem === $_POST['login']);
-			{
-				echo "ERROR"."\n";
-				$err = true;
-				break;
+		{
+			$tab = unserialize(file_get_contents("../private/passwd"));
+			foreach ($tab as $elem) {
+				if ($elem['login'] === $_POST["login"])
+				{
+					echo "ERROR"."\n";
+					$err = true;
+					break;
+				}
 			}
 		}
-		if (!$err)
+		if ($err == false)
 		{
-			file_put_contents("../private/passwd", serialize($tab), FILE_APPEND);
+			$account = array('login' => $_POST['login'], 'passwd' => $pwd);
+			array_push($tab, $account);
+			file_put_contents("../private/passwd", serialize($tab));
 			echo "OK"."\n";
 		}
-
 	}
 	else
 		echo "ERROR"."\n";
