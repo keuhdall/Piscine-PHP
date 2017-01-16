@@ -1,0 +1,13 @@
+.table-selector {
+	text-align: center;
+}
+
+.sql {
+	text-align: center;
+	margin-left: 15vw;
+	margin-right: 15vw;
+}
+
+.sql #sql-field {
+	width: 100%;
+}

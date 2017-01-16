@@ -1,0 +1,18 @@
+.order-container {
+	margin-bottom: 20px;
+	padding: 10px;
+	margin-left: 10vw;
+	margin-right: 10vw;
+	background-color: lightblue;
+	border: 1px solid black;
+}
+
+.order-container .product-line {
+	margin: 5px;
+	border: 1px solid black;
+}
+
+.total {
+	text-align: center;
+	font-size: 40px;
+}

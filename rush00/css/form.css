@@ -1,0 +1,25 @@
+.form {
+	position: relative;
+	margin: 0 auto;
+	width: 300px;
+}
+
+.form input {
+	position: absolute;;
+	right: 0;
+}
+
+.form .submit
+{
+	width: 100px;
+	position: relative;
+	margin-left: -50px;
+	left: 50%
+}
+
+.error-message {
+	text-align: center;
+	font-size: 48px;
+	font-weight: bold;
+	text-decoration: underline;
+}

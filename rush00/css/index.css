@@ -1,0 +1,12 @@
+/* This file contains css files specific for index.css */
+
+.vitrine-container {
+	width: 100%;
+	text-align: center;
+	background-color: #333;
+}
+
+.vitrine-container img {
+	min-height: 50vh;
+	max-height: 50vh;
+}

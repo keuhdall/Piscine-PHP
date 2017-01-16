@@ -1,0 +1,48 @@
+.container-produit {
+	position: relative;
+	width: 100vw;
+	padding: 15px;
+	background-color: lightblue;
+	margin-bottom: 20px;
+	z-index: 1;
+}
+
+.img-produit {
+	display: inline-block;
+	max-width: 10vw;
+}
+
+.nom-produit {
+	position: absolute;
+	left: 10vw;
+	margin-left: 30px;
+	display: inline-block;
+	font-size: 3vh;
+	font-size: 3vw;
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
+.description-produit {
+	display: inline-block;
+	font-size: 1vh;
+	font-size: 1vw;
+	font-style: italic;
+}
+
+.price {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	display: block;
+	font-size: 4vh;
+	font-size: 4vw;
+	font-weight: bolder;
+}
+
+.cart-button {
+	position: absolute;
+	right: 20px;
+	bottom: 10px;
+	margin-bottom: 0em;
+}
