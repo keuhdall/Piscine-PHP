@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<style type="text/css">
+		body {
+			text-align: center;
+		}
+
+		div {
+			margin-top: 20vh;
+			display: inline-block;
+			text-align: center;
+		}
+	</style>
+</head>
+	<body>
+		<div>
+			<form method="POST">
+				<input type="text" name="LEFT_NB">
+				<select name="SIGN">
+					<option value="+">+</option>
+					<option value="-">-</option>
+					<option value="*">*</option>
+					<option value="/">/</option>
+					<option value="%">%</option>
+				</select>
+				<input type="text" name="RIGHT_NB">
+				<input type="submit" value="Try me !" id="compute">
+			</form>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	var compute = document.getElementById("compute");
+	var LEFT_NB = document.getElementsByName("LEFT_NB");
+	var RIGHT_NB = document.getElementsByName("RIGHT_NB");
+	var SIGN = document.getElementsByName("SIGN");
+	compute.onclick = ft_compute;
+
+	function ft_compute()
+	{
+		var LEFT_NB_VAL = LEFT_NB[0].value;
+		var RIGHT_NB_VAL = RIGHT_NB[0].value;
+		var SIGN_VAL = SIGN[0].value;
+		if (ft_check(LEFT_NB_VAL, RIGHT_NB_VAL, SIGN_VAL))
+		{
+			var result = eval(LEFT_NB_VAL + SIGN_VAL + RIGHT_NB_VAL);
+			console.log(result);
+			alert(result);
+		}
+	}
+
+	function ft_check(LEFT_NB, RIGHT_NB, SIGN)
+	{
+		if (!LEFT_NB || !RIGHT_NB || isNaN(LEFT_NB) || isNaN(RIGHT_NB) ||
+			!ft_is_integer(LEFT_NB) || !ft_is_integer(RIGHT_NB) ||
+			LEFT_NB < 0 || RIGHT_NB < 0)
+		{
+			console.log("Error :(");
+			alert("Error :(");
+			return false;
+		}
+		else
+		{
+			if (RIGHT_NB == 0 && (SIGN == "/" || SIGN == "%"))
+			{
+				console.log("It's over 9000!");
+				alert("It's over 9000!");
+				return false;
+			}
+			return true;
+		}
+	}
+
+	function ft_is_integer(n) {
+		return n % 1 === 0;
+	}
+</script>
