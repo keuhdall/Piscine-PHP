@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+		div {
+			border-radius: 100%;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			margin: 0 auto;
+			margin-top: 35vh;
+		}
+	</style>
+</head>
+<body>
+	<div id="balloon"></div>
+	<script type="text/javascript">
+		document.getElementById("balloon").onclick = ft_inflate;
+		document.getElementById("balloon").addEventListener("mouseout", ft_deflate);
+
+		function ft_inflate()
+		{
+			var balloon = document.getElementById("balloon");
+			if (balloon.offsetWidth < 420) {
+				balloon.style.width = balloon.offsetWidth + 10 + "px";
+				balloon.style.height = balloon.offsetWidth + 10 + "px";
+			}else{
+				balloon.style.width = "200px";
+				balloon.style.height = "200px";
+			}
+			if (balloon.style.backgroundColor == "red")
+				balloon.style.backgroundColor = "green";
+			else if (balloon.style.backgroundColor == "green")
+				balloon.style.backgroundColor = "blue";
+			else
+				balloon.style.backgroundColor = "red";
+		}
+
+		function ft_deflate()
+		{
+			var balloon = document.getElementById("balloon");
+			if (balloon.offsetWidth > 200) {
+				balloon.style.width = balloon.offsetWidth - 5 + "px";
+				balloon.style.height = balloon.offsetWidth - 5 + "px";
+			}
+			if (balloon.style.backgroundColor == "red")
+				balloon.style.backgroundColor = "blue";
+			else if (balloon.style.backgroundColor == "green")
+				balloon.style.backgroundColor = "red";
+			else
+				balloon.style.backgroundColor = "green";
+		}
+	</script>
+</body>
+</html>
